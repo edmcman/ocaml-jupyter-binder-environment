@@ -11,4 +11,7 @@ RUN sudo jupyter kernelspec install --name ocaml-jupyter /home/opam/.opam/4.06/s
 
 RUN echo '#use "topfind";;' > /home/opam/.ocamlinit
 
+# Install these for the demo notebook
+RUN opam install -y cairo2 archimedes
+
 COPY --chown=opam . /home/opam
