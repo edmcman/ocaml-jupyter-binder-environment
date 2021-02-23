@@ -8,8 +8,8 @@ RUN sudo -E pip3 install notebook nbgitpuller
 RUN echo '#use "topfind";;' > /home/opam/.ocamlinit
 
 # Install these for the demo notebook
-RUN opam install -y cairo2 archimedes Core core slap fftw3
-# removed: owl gsl jupyter-archimedes
+RUN opam install -y cairo2 archimedes Core core
+# removed: owl gsl jupyter-archimedes slap fftw3
 
 # Install the OCaml jupyter kernel
 RUN opam install -y jupyter
