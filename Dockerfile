@@ -15,6 +15,7 @@ RUN opam install -y cairo2 archimedes
 # Install the OCaml jupyter kernel
 RUN opam install -y jupyter
 RUN eval $(opam env) && ocaml-jupyter-opam-genspec
-RUN sudo -E jupyter kernelspec install --name ocaml-jupyter /home/opam/.opam/4.06/share/jupyter
+#jupyter kernelspec install --name ocaml-jupyter-4.06.0 "$(opam var share)/jupyter"
+RUN sudo -E jupyter kernelspec install --name ocaml-jupyter "$(opam var share)/jupyter"
 
 COPY --chown=opam . /home/opam
