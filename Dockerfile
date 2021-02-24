@@ -11,6 +11,7 @@ RUN sudo -E pip3 install notebook nbgitpuller
 RUN opam install -y jupyter
 RUN eval $(opam env) && ocaml-jupyter-opam-genspec
 RUN sudo jupyter kernelspec install --name ocaml-jupyter "$(sudo -E -u opam opam var share)/jupyter"
+RUN sudo echo /home/opam/.opam/4.06/share/jupyter $(sudo -E -u opam opam var share)/jupyter
 RUN jupyter kernelspec list
 RUN sudo -E jupyter kernelspec list
 
