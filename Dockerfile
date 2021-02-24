@@ -5,8 +5,6 @@ RUN sudo -E pip3 install --upgrade pip
 # Install jupyter
 RUN sudo -E pip3 install notebook nbgitpuller
 
-# removed: owl gsl jupyter-archimedes slap fftw3 Core core
-
 # Install the OCaml jupyter kernel
 RUN opam install -y jupyter
 RUN eval $(opam env) && ocaml-jupyter-opam-genspec
