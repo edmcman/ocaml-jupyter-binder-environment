@@ -5,16 +5,16 @@ RUN sudo -E pip3 install --upgrade pip
 # Install jupyter
 RUN sudo -E pip3 install notebook nbgitpuller
 
-# Install these for the demo notebook
-RUN opam install -y cairo2 archimedes
 # removed: owl gsl jupyter-archimedes slap fftw3 Core core
 
 # Install the OCaml jupyter kernel
 RUN opam install -y jupyter
 RUN eval $(opam env) && ocaml-jupyter-opam-genspec
-#jupyter kernelspec install --name ocaml-jupyter-4.06.0 "$(opam var share)/jupyter"
 RUN sudo -E jupyter kernelspec install --name ocaml-jupyter "$(opam var share)/jupyter"
 
 RUN echo '#use "topfind";;' > /home/opam/.ocamlinit
+
+# Install these for the demo notebook
+RUN opam install -y cairo2 archimedes
 
 COPY --chown=opam . /home/opam
