@@ -18,6 +18,6 @@ RUN sudo -E jupyter kernelspec list
 RUN echo '#use "topfind";;' > /home/opam/.ocamlinit
 
 # Install these for the demo notebook
-RUN opam install -y cairo2 archimedes
+RUN opam install -y cairo2 archimedes owl gsl jupyter-archimedes slap fftw3 Core core
 
 COPY --chown=opam . /home/opam
