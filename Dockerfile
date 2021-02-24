@@ -13,6 +13,8 @@ RUN sudo jupyter kernelspec install --name ocaml-jupyter "$(sudo -E -u opam opam
 RUN echo '#use "topfind";;' > /home/opam/.ocamlinit
 
 # Install these for the demo notebook
-RUN opam install -y cairo2 archimedes owl gsl jupyter-archimedes slap fftw3 Core core
+RUN opam install -y cairo2 archimedes gsl jupyter-archimedes slap fftw3 Core core
+# eigen fails, required by owl
+# own
 
 COPY --chown=opam . /home/opam
