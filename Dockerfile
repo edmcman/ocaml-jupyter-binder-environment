@@ -11,7 +11,7 @@ RUN sudo -E pip3 install notebook nbgitpuller
 RUN opam install -y jupyter
 RUN eval $(opam env) && ocaml-jupyter-opam-genspec
 RUN echo "$(opam var share)"
-RUN sudo -E jupyter kernelspec install --name ocaml-jupyter "$(sudo -u opam opam var share)/jupyter"
+RUN jupyter kernelspec install --name ocaml-jupyter "$(opam var share)/jupyter"
 
 RUN echo '#use "topfind";;' > /home/opam/.ocamlinit
 
