@@ -6,7 +6,7 @@ RUN sudo -E pip3 install --upgrade pip
 RUN sudo -E pip3 install notebook nbgitpuller
 
 # Install the OCaml jupyter kernel
-RUN opam install -y jupyter cairo2 graphics archimedes gsl jupyter-archimedes slap fftw3 Core core cohttp-async
+RUN opam install -y jupyter cairo2 graphics archimedes gsl jupyter-archimedes slap fftw3 Core core cohttp-async cohttp-lwt
 # eigen fails, required by owl
 # own
 RUN eval $(opam env) && ocaml-jupyter-opam-genspec
